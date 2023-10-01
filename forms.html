@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS Reference Sheet Forms</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>HTML & CSS Reference Sheet Forms</h1>
+    </header>
+    <nav>
+        <ul>
+            <li class="nav-link">
+                <a href="index.html">Headings</a>
+            </li>
+            <li class="nav-link">
+                <a href="tables.html">Tables</a>
+            </li>
+            <li class="nav-link">
+                <a href="lists.html">Lists</a>
+            </li>
+            <li class="nav-link">
+                <a href="forms.html">Forms</a>
+            </li>
+            <li class="nav-link">
+                <a href="css-grid.html">CSS Grid</a>
+            </li>
+            <li class="nav-link">
+                <a href="flexbox.html">Flexbox</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <article>
+            <h2>Forms</h2>  
+            <form action="http://localhost:3000/api/submit" method="GET">
+                <label>name</label>
+                <input name="name" type="text" />
+                <br>
+                <label>button</label>
+                <input name="button" type="button" value="Click Me"/>
+                <br>
+                <label>Send me email?</label>
+                <input name="isSubscribedEmail" type="checkbox" checked/>
+                <br>
+                <label>Call me?</label>
+                <input name="isSubscribedCall" type="checkbox"/>
+                <br>
+                <label>Favorite color?</label>
+                <input name="color" type="color"/>
+                <br>
+                <label>Birthday?</label>
+                <input name="birthday" type="date"/>
+                <br>
+                <label>email</label>
+                <input name="email" type="email" />
+                <br>
+                <label>upload</label>
+                <input name="submission" type="file" />
+                <br>
+                <label>password</label>
+                <input name="password" type="password" />
+                <br>
+                <label>Favorite Language</label>
+                <input type="radio" id="html" name="fav_language" value="HTML" >
+                <label for="html">HTML</label><br>
+                <input type="radio" id="css" name="fav_language" value="CSS" checked>
+                <label for="css">CSS</label><br>
+                <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                <label for="javascript">JavaScript</label>
+                <br>
+                <input type="submit" value="Submit me">
+                
+                
+                
+
+            </form>          
+        </article>
+        <section>
+            <h2>Did you know?</h2>
+            <p>
+                The first version of HTML was written by Tim Berners-Lee in 1993. Since then, there have been many
+                different versions of HTML. The most widely used version throughout the 2000's was HTML 4.01, which
+                became an official standard in December 1999. Another version, XHTML, was a rewrite of HTML as an XML
+                language.
+            </p>
+        </section>
+    </main>
+</body>
+
+</html>
