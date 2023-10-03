@@ -1,2 +1,1 @@
-# html-css-reference
-HTML &amp; CSS Reference Sheet
+Website built for practice and reference. Built using Visual Studio Code. Utilizing HTML and CSS.
