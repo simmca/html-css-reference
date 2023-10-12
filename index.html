@@ -5,39 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML & CSS Reference Sheet</title>
+    <script src="https://kit.fontawesome.com/07c3f3bd0a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <header>
-        <h1>HTML & CSS Reference Sheet</h1>
-    </header>
-    <nav>
-        <ul>
-            <li class="nav-link">
-                <a href="index.html">Headings</a>
-            </li>
-            <li class="nav-link">
-                <a href="tables.html">Tables</a>
-            </li>
-            <li class="nav-link">
-                <a href="lists.html">Lists</a>
-            </li>
-            <li class="nav-link">
-                <a href="forms.html">Forms</a>
-            </li>
-            <li class="nav-link">
-                <a href="css-grid.html">CSS Grid</a>
-            </li>
-            <li class="nav-link">
-                <a href="flexbox.html">Flexbox</a>
-            </li>
-        </ul>
-    </nav>
+
+    <div id="header">
+        <div class="container">
+            <nav>
+                <ul id="sidemenu">
+                    <li class="nav-link"><a href="index.html">Headings</a></li>
+                    <li class="nav-link"><a href="tables.html">Tables</a></li>
+                    <li class="nav-link"><a href="lists.html">Lists</a></li>
+                    <li class="nav-link"><a href="forms.html">Forms</a></li>
+                    <li class="nav-link"><a href="css-grid.html">CSS Grid</a></li>
+                    <li class="nav-link"><a href="flexbox.html">Flexbox</a></li>
+                    <li class="nav-link"><a href="array-functions.html">Array Functions</a>
+                    </li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <h1>HTML & CSS Reference Sheet</h1>
+                <h2 class="main-header">Headings</h2>
+            </div>
+        </div>
+    </div>
+
     <main>
         <article>
-            <h2>Headings</h2>
             There are 6 types of headings:
+            <br>
             <ul>
                 <li>&lt;h1&gt;</li>
                 <li>&lt;h2&gt;</li>
@@ -46,13 +46,16 @@
                 <li>&lt;h5&gt;</li>
                 <li>&lt;h6&gt;</li>
             </ul>
+            <br>
             <p>
                 These headings are used by users, screen readers, and bots to quickly identify content of your site.
                 Heading tags do not need to be styled as they already have default values for style as you can see
                 below:
             </p>
-            <figure>
+            <br>
+            <figure class="figure">
                 <figcaption>Examples of the 6 HTML Headings</figcaption>
+                <br>
                 <h1>&lt;H1&gt; Sample Text</h1>
                 <h2>&lt;H2&gt; Sample Text</h2>
                 <h3>&lt;H3&gt; Sample Text</h3>
@@ -60,14 +63,16 @@
                 <h5>&lt;H5&gt; Sample Text</h5>
                 <h6>&lt;H6&gt; Sample Text</h6>
             </figure>
+            <br>
             <p>
                 That being said, most enterprise apps still provide custom stylization to their headings. Heading tags
                 should be used more for organizing your content in a hierarchial format. Rely on the CSS not the HTML
                 for the visual presentation.
             </p>
         </article>
-        <section>
+        <section class="did-you-know">
             <h2>Did you know?</h2>
+            <br>
             <p>
                 You can use <strong>&amplt;</strong> and <strong>&ampgt;</strong> to display the less-than sign
                 (<strong>&lt;</strong>) and the greater-than sign (<strong>&gt;</strong>). These are known as <em>HTML
@@ -80,5 +85,21 @@
             </p>
         </section>
     </main>
+
+    <!---------------scripts--------------->
+
+    <script>
+        let sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+
 </body>
+
 </html>

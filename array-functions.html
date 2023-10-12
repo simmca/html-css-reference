@@ -4,18 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML & CSS Reference Sheet Forms</title>
+    <title>HTML Cheat Sheet</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/07c3f3bd0a.js" crossorigin="anonymous"></script>
-    <style>
-        input {
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="prism.css">
 </head>
 
 <body>
-
     <div id="header">
         <div class="container">
             <nav>
@@ -34,57 +29,54 @@
             </nav>
             <div class="header-text">
                 <h1>HTML & CSS Reference Sheet</h1>
-                <h2 class="main-header">Forms</h2>
+                <h2 class="main-header">Array Higher Order Functions</h2>
             </div>
         </div>
     </div>
 
     <main>
         <article>
+            <ul>
+                <li>.forEach()</li>
+                <li>.map()</li>
+                <li>.reduce()</li>
+                <li>.filter()</li>
+            </ul>
+
+            <h3>.forEach()</h3>
+            <p>.forEach() iterates through each element executing a provided function for each element.</p>
             <br>
-            <form action="http://localhost:3000/api/submit" method="GET">
-                <label>Name</label>
-                <input name="name" type="text" />
-                <br>
-                <label>Button</label>
-                <input name="button" type="button" value="Click Me" />
-                <br>
-                <label>Send me email?</label>
-                <input name="isSubscribedEmail" type="checkbox" checked />
-                <br>
-                <label>Call me?</label>
-                <input name="isSubscribedCall" type="checkbox" />
-                <br>
-                <label>Favorite color?</label>
-                <input name="color" type="color" />
-                <br>
-                <label>Birthday?</label>
-                <input name="birthday" type="date" />
-                <br>
-                <label>Email</label>
-                <input name="email" type="email" />
-                <br>
-                <label>Upload</label>
-                <input name="submission" type="file" />
-                <br>
-                <label>Password</label>
-                <input name="password" type="password" />
-                <br>
-                <label>Favorite Language</label>
-                <input type="radio" id="html" name="fav_language" value="HTML">
-                <label for="html">HTML</label><br>
-                <input type="radio" id="css" name="fav_language" value="CSS" checked>
-                <label for="css">CSS</label><br>
-                <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-                <label for="javascript">JavaScript</label>
-                <br>
-                <input type="submit" value="Submit me">
+            <pre><code class="language-javascript">
+const array = ["jack", "and", "jill", "went", "up", "the", "hill"];
 
+function displayString(str){
+    console.log(str);
+}
 
+array.forEach(displayString);
+</code></pre>
+            <br>
+            <h4>Output:</h4>
+            <br>
+            <pre><code class="language-md">
+jack
+and
+jill
+went
+up
+the
+hill
+</code></pre>
+            <br>
+            <p>You can use an anonymous function (most common) as well</p>
+            <br>
+            <pre><code class="language-javascript">
+const array = ["jack", "and", "jill", "went", "up", "the", "hill"];
 
-
-            </form>
+array.forEach((element) => { console.log(element); });
+</code></pre>
         </article>
+
         <section class="did-you-know">
             <h2>Did you know?</h2>
             <br>
@@ -96,7 +88,10 @@
             </p>
         </section>
     </main>
+
     <!---------------scripts--------------->
+
+    <script src="prism.js"></script>
 
     <script>
         let sidemenu = document.getElementById("sidemenu");

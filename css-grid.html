@@ -6,20 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML & CSS Reference Sheet Grid</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/07c3f3bd0a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="prism.css">
 
     <style>
-        .container {
+        .grid-container {
             display: grid;
             grid-template-columns: 25% 25% 25% 25%;
             grid-template-rows: auto;
             grid-template-areas:
-                "header header header header" /* note lack of semicolon! */
-                "main main . sidebar" /* note lack of semicolon! */
-                "footer footer footer footer"; /* note the semicolon! */
+                "header header header header"
+                /* note lack of semicolon! */
+                "main main . sidebar"
+                /* note lack of semicolon! */
+                "footer footer footer footer";
+            /* note the semicolon! */
         }
 
-        .container>div {
+        .grid-container>div {
             border: 1px black solid;
             border-radius: 10px;
             padding: 10px;
@@ -27,24 +31,28 @@
 
         .top {
             background-color: rgb(248, 147, 38);
+            color: #fff;
             grid-area: header;
             /* We assign the elements to `header` section*/
         }
 
         .left-side {
             background-color: rgb(60, 190, 230);
+            color: #fff;
             grid-area: main;
             /* We assign the elements to `main` section*/
         }
 
         .right-side {
             background-color: rgb(235, 112, 112);
+            color: #fff;
             grid-area: sidebar;
             /* We assign the elements to `sidebar` section*/
         }
 
         .bottom {
             background-color: rgb(115, 197, 117);
+            color: #fff;
             grid-area: footer;
             /* We assign the elements to `footer` section*/
         }
@@ -52,43 +60,44 @@
 </head>
 
 <body>
-    <header>
-        <h1>HTML & CSS Reference Sheet Grid</h1>
-    </header>
-    <nav>
-        <ul>
-            <li class="nav-link">
-                <a href="index.html">Headings</a>
-            </li>
-            <li class="nav-link">
-                <a href="tables.html">Tables</a>
-            </li>
-            <li class="nav-link">
-                <a href="lists.html">Lists</a>
-            </li>
-            <li class="nav-link">
-                <a href="forms.html">Forms</a>
-            </li>
-            <li class="nav-link">
-                <a href="css-grid.html">CSS Grid</a>
-            </li>
-            <li class="nav-link">
-                <a href="flexbox.html">Flexbox</a>
-            </li>
-        </ul>
-    </nav>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <ul id="sidemenu">
+                    <li class="nav-link"><a href="index.html">Headings</a></li>
+                    <li class="nav-link"><a href="tables.html">Tables</a></li>
+                    <li class="nav-link"><a href="lists.html">Lists</a></li>
+                    <li class="nav-link"><a href="forms.html">Forms</a></li>
+                    <li class="nav-link"><a href="css-grid.html">CSS Grid</a></li>
+                    <li class="nav-link"><a href="flexbox.html">Flexbox</a></li>
+                    <li class="nav-link"><a href="array-functions.html">Array Functions</a>
+                    </li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <h1>HTML & CSS Reference Sheet</h1>
+                <h2 class="main-header">CSS Grid</h2>
+            </div>
+        </div>
+    </div>
+
     <main>
         <article>
-            <h2>CSS Grid</h2>
             <p>CSS Grid gives you incredible control over splitting a page into subsections.</p>
+            <br>
             <p>Use the following page as a reference:
                 <a href="https://css-tricks.com/snippets/css/complete-guide-grid/"
                     target="_blank">https://css-tricks.com/snippets/css/complete-guide-grid/</a>
             </p>
+            <br>
             <p>There are multiple ways to setup a grid. We will cover the most common use-cases</p>
-            <h3>Start with a container grid then define each cell</h3>
-            <pre><code class="language-css">
-.container {
+            <br>
+            <p>Start with a container grid then define each cell:</p>
+            <br>
+            <pre class="grid-pre-1"><code class="language-css">
+.grid-container {
     display:grid;
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: auto;
@@ -99,7 +108,7 @@
 }
 
 /* All .container children have these properties */
-.container > div {
+.grid-container > div {
     border: 1px black solid;
     border-radius: 10px;
     padding: 10px;
@@ -125,7 +134,7 @@
     grid-area: footer;   /* Assign to `footer` section*/
 }
 </code></pre>
-            <pre><code class="language-html">
+            <pre class="grid-pre-2"><code class="language-html">
 &lt;div class="container"&gt;
     &lt;div class="top"&gt;Orange&lt;/div&gt;
     &lt;div class="left-side"&gt;Blue&lt;/div&gt;
@@ -141,8 +150,10 @@
                 <div class="bottom">Green</div>
             </div>
         </article>
-        <section>
+
+        <section class="did-you-know">
             <h2>Did you know?</h2>
+            <br>
             <p>
                 The first version of HTML was written by Tim Berners-Lee in 1993. Since then, there have been many
                 different versions of HTML. The most widely used version throughout the 2000's was HTML 4.01, which
@@ -151,7 +162,23 @@
             </p>
         </section>
     </main>
+
+    <!---------------scripts--------------->
+
     <script src="prism.js"></script>
+
+    <script>
+        let sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+
 </body>
 
 </html>

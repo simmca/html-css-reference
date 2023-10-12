@@ -6,32 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML & CSS Reference Sheet Tables</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/07c3f3bd0a.js" crossorigin="anonymous"></script>
     <style>
         .simple-table {
-            border: 1px purple solid;
+            border: 1px #fff;
         }
 
         .simple-row {
             margin: 1px;
-            border: 1px blue solid;
+            border: 1px #fff;
         }
 
         .simple-td {
             margin: 1px;
-            border: 1px gray solid;
+            border: 1px #fff;
         }
 
         tbody>tr:nth-child(even) {
-            background-color: goldenrod;
+            background-color: #252525;
         }
 
         tbody>tr:nth-child(odd) {
-            background-color: burlywood;
+            background-color: #000;
         }
 
         th {
-            background-color: cadetblue;
+            background-color: #05695c;
         }
+
         td {
             padding-left: 5px;
             padding-right: 5px;
@@ -40,41 +42,41 @@
 </head>
 
 <body>
-    <header>
-        <h1>HTML & CSS Reference Sheet Tables</h1>
-    </header>
-    <nav>
-        <ul>
-            <li class="nav-link">
-                <a href="index.html">Headings</a>
-            </li>
-            <li class="nav-link">
-                <a href="tables.html">Tables</a>
-            </li>
-            <li class="nav-link">
-                <a href="lists.html">Lists</a>
-            </li>
-            <li class="nav-link">
-                <a href="forms.html">Forms</a>
-            </li>
-            <li class="nav-link">
-                <a href="css-grid.html">CSS Grid</a>
-            </li>
-            <li class="nav-link">
-                <a href="flexbox.html">Flexbox</a>
-            </li>
-        </ul>
-    </nav>
+
+    <div id="header">
+        <div class="container">
+            <nav>
+                <ul id="sidemenu">
+                    <li class="nav-link"><a href="index.html">Headings</a></li>
+                    <li class="nav-link"><a href="tables.html">Tables</a></li>
+                    <li class="nav-link"><a href="lists.html">Lists</a></li>
+                    <li class="nav-link"><a href="forms.html">Forms</a></li>
+                    <li class="nav-link"><a href="css-grid.html">CSS Grid</a></li>
+                    <li class="nav-link"><a href="flexbox.html">Flexbox</a></li>
+                    <li class="nav-link"><a href="array-functions.html">Array Functions</a>
+                    </li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <h1>HTML & CSS Reference Sheet</h1>
+                <h2 class="main-header">Tables</h2>
+            </div>
+        </div>
+    </div>
+
     <main>
         <article>
-            <h2>Tables</h2>
-            <h3>Basic tables with TR and TD</h3>
+            <h3 class="header-table">Basic tables with TR and TD</h3>
+            <br>
             <p>Tables are a very convenient means to display structured data.
                 Tables can be boiled down to <strong>rows</strong> and <strong>cells</strong>.
 
                 A simple table can be written as:
             </p>
-            <pre>
+            <br>
+            <pre class="table-pre-1">
 &lt;table class="simple-table"&gt;
     &lt;tr class="simple-row"&gt;
         &lt;td class="simple-td"&gt;
@@ -107,12 +109,11 @@
     &lt;/tr&gt;
 &lt;/table&gt;
 </pre>
-
+            <br>
             <p>
                 Which looks like this:
             </p>
-
-
+            <br>
             <table class="simple-table">
                 <tr class="simple-row">
                     <td class="simple-td">
@@ -144,12 +145,15 @@
                     </td>
                 </tr>
             </table>
+            <br>
             <p>
                 Typically the data will be very structured, but notice that the number of columns are determines by the
                 number of cells in a row. If you wanted to expand a cell to take up X columns, you can use
                 <em>colspan="X"</em>. Refer to the example above.
             </p>
-            <h3>Tables with head, body, and footer</h3>
+            <br>
+            <h3 class="header-table">Tables with head, body, and footer</h3>
+            <br>
             <p>Modern tables now have thead, tbody, and tfoot tags that can be used with CSS to organize the table
                 content better.</p>
             <h4>&lt;thead&gt;</h4>
@@ -163,9 +167,10 @@
             <p>TFOOT is the bottom row of your table and can be used to contain aggregate data, such as totals.</p>
             <h4>&lt;caption&gt;</h4>
             <p>A description of the table that is read by users, screen readers, and bots.</p>
-
+            <br>
             <p>Here is example code:</p>
-            <pre>
+            <br>
+            <pre class="table-pre-2">
 &lt;table&gt;
     &lt;caption&gt;
         My favorite Mortal Kombat characters
@@ -226,7 +231,9 @@
     &lt;/tfoot&gt;
 &lt;/table&gt;
             </pre>
+            <br>
             <p>And this is what the code looks like with styling:</p>
+            <br>
             <table>
                 <caption>
                     My favorite Mortal Kombat characters
@@ -288,8 +295,9 @@
             </table>
 
         </article>
-        <section>
+        <section class="did-you-know">
             <h2>Did you know?</h2>
+            <br>
             <p>
                 You can use <strong>&amplt;</strong> and <strong>&ampgt;</strong> to display the less-than sign
                 (<strong>&lt;</strong>) and the greater-than sign (<strong>&gt;</strong>). These are known as <em>HTML
@@ -302,6 +310,20 @@
             </p>
         </section>
     </main>
+    <!---------------scripts--------------->
+
+    <script>
+        let sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+
 </body>
 
 </html>
